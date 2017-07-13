@@ -1,0 +1,9 @@
+*{margin: 0;padding: 0;}
+body{font-size: 62.5%;font-family: "微软雅黑"}
+ul,ol{list-style: none;}
+
+.room{width: 100%;}
+.bg{width:50%;height: 600px;margin:0 auto;background:#000;position: relative;}
+#player{width: 30px;height:30px;background:#ffffff;position: absolute;left: 90px;top:500px;}
+.enner{width: 1.2rem;height: 30px;background: #f0f0f0;position:absolute;left:40px;top:-30px;}
+.zidan{width: 2px;height: 2px;background: #fff000;position: absolute;}

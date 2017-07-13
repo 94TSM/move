@@ -1,4 +1,65 @@
-/*控制player移动*/ 
+function Player(blood,speed){
+    this.blood=blood;
+    this.speed=speed;
+}
+/*敌人*/
+function Enner(blood,speed,w,h) {
+    this.blood = blood;
+    this.speed = speed;
+    this.w = w;
+    this.h = h;
+    this.enner_move = function () {
+        let speed = this.speed;
+        this.style.top = this.offsetTop + speed + "px";
+        return this.offsetTop;
+        /*let bg=document.getElementsByClassName("bg")[0];
+         let timer=setInterval(
+         function(){
+         let obj=document.createElement("div");
+         obj.setAttribute("class","enner");
+         obj.style.left=parseInt(Math.random()*bg.clientWidth)+"px";
+         bg.appendChild(obj);
+         let time_4=setInterval(function(){
+         obj.style.top=obj.offsetTop+speed+"px";
+         if(obj.offsetTop>bg.clientHeight){
+         bg.removeChild(obj);
+         //clearInterval(timer);
+         }
+         },200);
+         //console.log(time_1);
+         /!*let player=document.getElementById("player");
+         if(obj.offsetTop+obj.clientHeight>=player.offsetTop&&obj.offsetTop+obj.clientHeight<=player.offsetTop+player.clientHeight &&obj.offsetLeft<=player.offsetLeft+player.clientWidth&&obj.offsetLeft+obj.clientWidth>=player.offsetLeft){
+         bg.removeChild(obj);
+         bg.removeChild(player);
+         clearInterval(timer);
+         }*!/
+
+         // console.log(enner[i].offsetTop);
+
+         },200);
+         }*/
+    }
+}
+/*子弹*/
+function Bullet(speed){
+    this.speed=speed;
+    this.bullet_move=function(){
+        let speed=this.speed;
+        this.style.top=this.offsetTop+speed+"px";
+        return this.offsetTop;
+    }
+
+}
+
+/*创建player*/
+window.onload=function(){
+    let Obj=new Player(30,10);
+    let Obj_1=document.createElement("div");
+    Obj_1.setAttribute("id","player");
+    let bg=document.getElementsByClassName("bg")[0];
+    bg.appendChild(Obj_1);
+}
+/*控制player移动*/
 window.onkeydown=function(event){
     // console.log(event);
     let speed=10;
@@ -24,7 +85,7 @@ window.onkeydown=function(event){
                         y.style.top=y.offsetTop-speed+"px";
                     }
                 }         
-            }  
+            }
         }else if(e && e.keyCode==83){
             if(y.offsetTop >= 0 && y.offsetTop <= y1)
             {
@@ -64,6 +125,7 @@ window.onkeydown=function(event){
         }
 }
 /*enner的移动*/
+/*
 function enner_move(){
     let speed=5;
     let bg=document.getElementsByClassName("bg")[0];
@@ -94,6 +156,7 @@ function enner_move(){
 
         },200);
 } 
+*/
 /*射击*/
 function sheji(w,h){
     let sheji_w=w;
@@ -167,9 +230,9 @@ function zidan(){
                  bg.removeChild(enner[j]);
                  }*/
             }
-            for(let k=0;k<array.length;k++){
+            /*for(let k=0;k<array.length;k++){
                 for(let )
-            }
+            }*/
             /*if(zidan!=null){
                 for(let i=0;i<zidan.length;){
                     if(zidan[i].offsetTop+h<0){
